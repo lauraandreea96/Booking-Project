@@ -1,0 +1,47 @@
+.register {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),url('https://wallpaperaccess.com/full/144015.jpg') center no-repeat;
+    background-size: cover;
+  }
+  
+  .lContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 30%;
+  }
+  
+  .lInput{
+    height: 30px;
+    padding: 10px;
+    border: none;
+  }
+  
+  .lButton {
+    border: none;
+    padding: 10px 20px;
+    background-color: #0071c2;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .lButton:disabled{
+    background-color: #0071c28c;
+    cursor: not-allowed;
+  }
+
+  @media only screen and (max-width: 1023px) and (min-width: 767px){
+    .lContainer {
+        width: 50%;
+      }
+  }
+
+  @media only screen and (max-width: 767px){
+    .lContainer {
+      width: 70%;
+    }
+  }

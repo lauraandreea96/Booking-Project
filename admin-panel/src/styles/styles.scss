@@ -1,0 +1,24 @@
+@import "./abstracts/variables";
+@import "./abstracts/breakpoints";
+@import "./base/reset.scss";
+@import "./layout/grid";
+@import "./abstracts/mixins.scss";
+
+
+//menu toggle on small devices
+.openMenu{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    @include md{
+        display: none;
+    }
+
+    .menuIcon, .closeMenu{
+        position: relative;
+        font-size: 22px;
+        cursor: pointer;
+        z-index: 111;
+        color: $primary;
+    }
+}

@@ -1,0 +1,173 @@
+.header{
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),url('https://images.squarespace-cdn.com/content/v1/59b167e71f318d0ea9cf9198/1536838576813-6RKA42F6PCLNHCS6EWSS/2016-07-21%2C07-01-16.jpg?format=2500w') center no-repeat;
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 50vh;
+}
+
+.headerContainer{
+    width: 100%;
+    max-width: 1024px;
+    margin: 20px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 40px;
+}
+
+.headerDesc{
+   margin: 20px 0px;
+}
+
+.headerTitle{
+    font-size: 36px;
+ }
+
+.headerBtn{
+    background-color: #159990;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.headerSearch{
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 0px;
+    position: absolute;
+    bottom: -25px;
+    width: 100%;
+    max-width: 1024px;
+    -webkit-box-shadow: 0px 9px 17px -5px rgba(0,0,0,0.26); 
+    box-shadow: 0px 9px 17px -5px rgba(0,0,0,0.26);
+}
+
+.headerIcon{
+    color: lightgrey;
+}
+
+.headerSearchItem{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.headerSearchInput{
+    border: none;
+    outline: none;
+}
+
+.headerSearchText{
+    color: lightgray;
+    cursor: pointer;
+}
+
+.dateRange{
+    position: absolute;
+    top:50px;
+    z-index: 2;
+}
+
+.options{
+    position: absolute;
+    top: 50px;
+    background-color: white;
+    color: gray;
+    -webkit-box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+.optionItem{
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.optionCounter{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 10px;
+    color: black;
+}
+
+.optionCounterButton{
+    width: 30px;
+    height: 30px;
+    border: 1px solid #159990;
+    color: #159990;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.optionCounterButton:disabled{
+    cursor: not-allowed;
+}
+
+
+@media only screen and (max-width: 1023px) and (min-width: 767px){
+    .headerContainer{
+        margin: 20px 0px 0px 0px;
+        align-items: center;
+    }
+
+    .headerSearch{
+        flex-wrap: wrap;
+        width: 90%;
+        bottom: -45px;
+    }
+    .headerSearchItem{
+        width: 40%;
+        margin: 10px;
+    }
+
+    .searchBtn{
+        width: 100%;
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+    .header{
+        height: 70vh;
+    }
+    .headerContainer{
+        margin: 20px 0px 0px 0px;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .headerTitle{
+        font-size: 28px;
+     }
+
+    .headerSearch{
+        width: 90%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: auto;
+        bottom: -120px;
+    }
+    .headerSearchItem{
+        width: 100%;
+        margin: 10px;
+    }
+  
+    .options{
+        top: 130px;
+    }
+
+    .dateRange{
+        top:90px;
+    }
+}
+

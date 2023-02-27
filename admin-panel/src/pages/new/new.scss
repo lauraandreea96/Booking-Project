@@ -1,0 +1,59 @@
+@import "../../styles/styles.scss";
+
+.new{
+    @include pageDisplay;
+    
+
+    .newContainer{
+
+        .top, .bottom{
+            @include shadow;
+            margin: 20px;
+            display: flex;
+            flex-wrap: wrap;
+
+            h1{
+                color: lightgray;
+                font-size: 20px;
+            }
+
+            .left{
+                text-align: center;
+
+                img{
+                    @include imageItem;
+                }
+            }
+
+            .right{
+                padding: 0px 20px;
+
+                form{
+                    @include flexItem;
+                    gap: 20px;
+
+                    .formInput{
+
+                        label{
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+
+                            .icon{
+                                cursor: pointer;
+                            }
+                        }
+
+                        input, select, textarea{
+                            @include inputItem;
+                        }
+                    }
+
+                    button{
+                        @include button;
+                    }
+                }
+            }
+        }
+    }
+}

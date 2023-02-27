@@ -1,0 +1,54 @@
+@import "../../styles/styles.scss";
+
+.profile{
+    @include pageDisplay;
+
+    .profileContainer{
+
+        .container{
+            @include shadow;
+            margin: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+
+            .left{
+                text-align: center;
+
+                .profileImg{
+                    @include imageItem;
+                }
+            }
+
+            .right{
+                padding: 0px 20px;
+
+                form{
+                    @include flexItem;
+                    gap: 20px;
+
+                    .formInput{
+
+                        label{
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+
+                            .icon{
+                                cursor: pointer;
+                            }
+                        }
+
+                        input{
+                            @include inputItem;
+                        }
+                    }
+
+                    button{
+                        @include button;
+                    }
+                }
+            }
+        }
+    }
+}

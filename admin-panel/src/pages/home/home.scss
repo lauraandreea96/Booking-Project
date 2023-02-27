@@ -1,0 +1,51 @@
+@import "../../styles/styles.scss";
+
+.home{
+    @include pageDisplay;
+    position: relative;
+
+    // .openMenu{
+    //     position: absolute;
+    //     top: 10px;
+    //     left: 10px;
+    //     @include md{
+    //         display: none;
+    //     }
+
+    //     .menuIcon, .closeMenu{
+    //         position: relative;
+    //         font-size: 22px;
+    //         cursor: pointer;
+    //         z-index: 111;
+    //     }
+    // }
+    
+    .homeContainer{
+
+        .widgets{
+            @include flexItem;
+            padding: 20px;
+            gap: 20px;
+            padding-top: 50px;
+            @include md{
+                padding-top: 20px;
+            }
+        }
+
+        .charts{
+            padding: 5px 20px;
+        }
+
+        .listContainer{
+            @include shadow;
+            margin: 20px;
+
+            .listTitle{
+                font-weight: 500;
+                color: gray;
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+}

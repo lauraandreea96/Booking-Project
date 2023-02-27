@@ -1,0 +1,193 @@
+.listContainer{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.listWrapper{
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+.listSearch{
+    flex: 1;
+    background-color: #eff9f7;
+    padding: 10px;
+    position: sticky;
+    top: 10px;
+    height: max-content;
+}
+
+.openSearch{
+    display: none;
+} 
+
+.closeSearch{
+    display: none;
+}
+
+input{
+    outline: none;
+}
+
+.lsTitle{
+    font-size: 20px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.lsItem{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.lsItem>label{
+    font-size: 12px;
+}
+
+.lsItem>input{
+    height: 30px;
+    border: none;
+    padding: 5px;
+    color: rgb(65, 64, 64);
+}
+
+.lsItem>span{
+    height: 30px;
+    padding: 5px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.lsOptions{
+    padding: 10px;
+}
+
+.lsOptionItem{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #000;
+    font-size: 12px;
+}
+
+.lsOptionInput{
+    width: 50px;
+    border: none;
+    padding: 5px;
+}
+
+.listSearch>button{
+    padding: 10px;
+    background-color: #159990;
+    color: white;
+    border: none;
+    width: 100%;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.listResult{
+    flex: 3;
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 767px){
+    .listWrapper{
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .openSearch{
+        display: block;
+        margin: 20px 40px 0 40px;
+        align-self: start;
+    }
+
+    .closeSearch{
+        margin-bottom: 20px;
+    }
+
+    .openSearch.active{
+        display: none;
+    }
+
+    .listSearch{
+        width: calc(100% - 40px);
+        padding: 20px;
+        top: 0;
+        display: none;
+    }
+
+    .listSearch.active{
+        display: block;
+    }
+
+    .listSearch.active{
+        display: block;
+    }
+    
+    .closeSearch{
+        display: block;
+    }
+
+    .listResult{
+        width: calc(100% - 80px);
+        padding: 40px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .listContainer{
+        margin: 0 0 20px 0;
+    }
+
+    .listWrapper{
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .openSearch{
+        display: block;
+        margin: 20px 20px 0 20px;
+        align-self: start;
+    }
+
+    .closeSearch{
+        margin-bottom: 20px;
+    }
+
+    .openSearch.active{
+        display: none;
+    }
+
+    .listSearch{
+        width: calc(100% - 40px);
+        padding: 20px;
+        top: 0;
+        display: none;
+    }
+
+    .listSearch.active{
+        display: block;
+    }
+
+    .listSearch.active{
+        display: block;
+    }
+    
+    .closeSearch{
+        display: block;
+    }
+
+    .listResult{
+        width: calc(100% - 40px);
+        padding: 20px;
+    }
+}

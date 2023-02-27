@@ -1,0 +1,41 @@
+@mixin pageDisplay {
+    width: 100%;
+    display: flex;
+}
+
+@mixin shadow{
+    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);	
+    padding: 10px;
+}
+
+@mixin flexItem{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@mixin imageItem{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+@mixin inputItem{
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid gray;
+    outline: none;
+}
+
+@mixin button{
+    padding: 10px;
+    border: none;
+    background-color: $primary;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}

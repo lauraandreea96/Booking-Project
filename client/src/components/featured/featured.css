@@ -1,0 +1,55 @@
+.featured{
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    z-index: 1;
+    flex-wrap: wrap;
+}
+
+.featuredItem{
+    position: relative;
+    color: white;
+    overflow: hidden;
+    height: 250px;
+    flex: 1;
+    cursor: pointer;
+    min-width: 300px;
+}
+
+.featuredImg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.featuredItem:hover .featuredImg{
+    width: 110%;
+    height: 110%;
+}
+
+.backgroundTitles{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background-color: rgba(0, 0, 0, 0.51);
+}
+
+.featuredTitles{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.featuredTitles h1{
+    font-size: 24px;
+}
+
+.featuredTitles h2{
+    font-size: 18px;
+    font-weight: 300;
+}

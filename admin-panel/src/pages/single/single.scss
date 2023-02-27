@@ -1,0 +1,62 @@
+@import "../../styles/styles.scss";
+
+.single{
+    @include pageDisplay;
+
+    .singleContainer{
+
+        .top{
+            @include shadow;
+            margin: 20px;
+            padding: 20px;
+            position: relative;
+
+                .item{
+                    @include flexItem;
+                    gap: 20px;
+
+                    .left{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        .itemImg{
+                            @include imageItem;
+                        }
+
+                        h1{
+                            font-size: 18px;
+                            text-align: center;
+                        }
+                    }
+
+                    .details{
+                        @include flexItem;
+
+                        .detailItem{
+                            margin-bottom: 10px;
+                            font-size: 14px;
+
+                            .itemKey{
+                                font-weight: bold;
+                                color: gray;
+                                margin-right: 5px;
+                            }
+
+                            .itemValue{
+                                font-weight: 300;
+                            }
+                        }
+                    }
+                }
+        }
+
+
+        .title{
+            font-size: 16px;
+            color: lightgray;
+            margin-bottom: 20px;
+        }
+    }
+
+}
