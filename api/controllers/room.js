@@ -5,7 +5,6 @@ import Hotel from "../models/Hotel.js"
 export const createRoom = async(req, res, next) =>{
     const hotelId = req.params.hotelid;
     const newRoom = new Room(req.body);
-
     try{
         const savedRoom = await newRoom.save();
         try{
@@ -20,7 +19,6 @@ export const createRoom = async(req, res, next) =>{
 }
 
 export const updateRoom = async (req, res, next)=>{
-
     try{
         const updatedRoom = await Room.findByIdAndUpdate(req.params.id, {$set: req.body}, {new: true});
         res.status(200).json(updatedRoom);
@@ -28,7 +26,6 @@ export const updateRoom = async (req, res, next)=>{
         next(err);
     }
 };
-
 
 export const updateRoomAvailability = async (req, res, next) => {
     try {
@@ -72,7 +69,6 @@ export const getRoom = async (req, res, next)=>{
 };
 
 export const getRooms = async (req, res, next)=>{
-    
     try{
         const rooms = await Room.find();
          res.status(200).json(rooms);
@@ -80,9 +76,6 @@ export const getRooms = async (req, res, next)=>{
          next(err);
      }
 };
-
-
-//count rooms
 
 export const countRooms = async (req, res, next)=>{
     try{

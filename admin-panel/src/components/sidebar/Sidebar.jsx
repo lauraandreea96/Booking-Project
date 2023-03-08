@@ -15,8 +15,8 @@ const Sidebar = (props) => {
     const handleClick=()=>{
         dispatch({type:"LOGOUT"});
         navigate("/login");
-    }
-    // style={{display: props.view ? "block" : "none"}}
+    };
+  
   return (
     <div className= {props.view ? "sidebar active col-2-md col-4-sm col-6-xs" : "sidebar inactive col-2-md col-4-sm col-6-xs"}>
         <div className="top">

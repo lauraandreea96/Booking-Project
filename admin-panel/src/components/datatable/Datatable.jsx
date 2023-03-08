@@ -16,7 +16,6 @@ const Datatable = ({type, columns}) => {
     useEffect(()=>{
         setList(data);
     },[data]);
-
     const handleDelete = async (id, hotelId) =>{
         try{
             if(path === "rooms"){
@@ -32,8 +31,7 @@ const Datatable = ({type, columns}) => {
         }catch(err){}
 
         setList(list.filter((item)=> item._id !== id));
-    }
-
+    };
     const actionColumn = [
         {
             field: "action",

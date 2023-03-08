@@ -9,26 +9,20 @@ export const FeaturedProperties = () => {
     const { data, loading, error } = useFetch(
         "/hotels?fratured=true&limit=4"
       );
-      console.log(data);
-
-      const dates = [
-        {
-          startDate: new Date(),
-          endDate: new Date(),
-          key: 'selection'
-        }
-      ];
-    
-      const options = {
-        adult: 1,
-        children: 0,
-        room: 1,
-      };
-
- 
+    const dates = [
+      {
+        startDate: new Date(),
+        endDate: new Date(),
+        key: 'selection'
+      }
+    ];
+    const options = {
+      adult: 1,
+      children: 0,
+      room: 1,
+    };
     const handleClick = ()=>{
         dispatch({type:"NEW_SEARCH", payload: { dates, options}})
-        
     }
 
   return (

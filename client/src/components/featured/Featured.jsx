@@ -13,26 +13,21 @@ export const Featured = () => {
       key: 'selection'
     }
   ];
-
   const options = {
     adult: 1,
     children: 0,
     room: 1,
   };
-
-
   const { data, loading, error } = useFetch(
     "/hotels/countByCity?cities=berlin,madrid,london"
   );
-  console.log(data);
+  const navigate = useNavigate();
+  const {dispatch} = useContext(SearchContext);
 
-    const navigate = useNavigate();
-    const {dispatch} = useContext(SearchContext);
-
-    const handleClick = (e)=>{
-      dispatch({type:"NEW_SEARCH", payload: {destination: e.target.name, dates, options}})
-      navigate("/hotels", {state:{destination: e.target.name, dates, options}})
-    }
+  const handleClick = (e)=>{
+    dispatch({type:"NEW_SEARCH", payload: {destination: e.target.name, dates, options}})
+    navigate("/hotels", {state:{destination: e.target.name, dates, options}})
+  }
 
   return (
     <div className="featured">
@@ -51,7 +46,6 @@ export const Featured = () => {
                   <h2>{data[0]} properties</h2>
               </div>
           </div>
-
           <div className="featuredItem">
           <img
             src="https://media.istockphoto.com/id/514769480/photo/madrid-spain-on-gran-via.jpg?s=612x612&w=0&k=20&c=5PDxqwnxYmudMHIs3ZkRJRE64153nnw-hJTH2zdryzc="
@@ -66,7 +60,6 @@ export const Featured = () => {
             <h2>{data[1]} properties</h2>
           </div>
         </div>
-
         <div className="featuredItem">
           <img
             src="https://i0.wp.com/www.montcalmroyallondoncity.co.uk/blog/wp-content/uploads/2017/07/shutterstock_107597459.jpg?fit=1000%2C667&ssl=1"

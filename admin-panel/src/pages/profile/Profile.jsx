@@ -9,17 +9,12 @@ const Profile = (props) => {
     const{user, dispatch} = useContext(AuthContext);
     const [file, setFile] = useState(user.img);
     const [info, setInfo] = useState({});
-    console.log(user);
-    
     const handleChange = (e) =>{
         setInfo(prev => ({
             ...prev,
             [e.target.id]: e.target.value
         }))
-    }
-    
-
-
+    };
     const handleClick = async (e) =>{
         e.preventDefault();
         const data = new FormData();
@@ -28,20 +23,16 @@ const Profile = (props) => {
         try{
         const uploadRes = await axios.post("https://api.cloudinary.com/v1_1/dpp13bpyb/image/upload", data);
         const {url} = uploadRes.data;
-
         const updateUser = {
             ...info,
             img: url,
         };
-
-
         await axios.put(`/users/${user._id}`, updateUser);
         }catch(err){
         console.log(err);
         }
     };
     
-
   return (
     <div className='profile'>
         <Sidebar view={props.view}/>

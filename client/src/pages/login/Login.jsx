@@ -9,16 +9,12 @@ export const Login = () => {
     const [credentials, setCredential] = useState({
         username: undefined,
         password: undefined,
-    })
-
+    });
     const {loading, error, dispatch} = useContext(AuthContext);
-
     const navigate = useNavigate();
-
     const handleChange = (e)=>{
         setCredential(prev =>({...prev, [e.target.id]: e.target.value}))
     }
-
     const handleClick = async (e)=>{
         e.preventDefault();
         dispatch({type:"LOGIN_START"});

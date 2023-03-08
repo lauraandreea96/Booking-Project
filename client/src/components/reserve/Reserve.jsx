@@ -13,33 +13,25 @@ export const Reserve = ({setOpen, hotelId}) => {
     const {data, loading, error} = useFetch(`/hotels/room/${hotelId}`);
     const {dates} = useContext(SearchContext);
     const navigate = useNavigate();
-
     const getDatesInRange = (start, end)=>{
-        // const start = new Date(start);
-        // const end = new Date(end);
         const date = new Date(start.getTime());
         let list =[];
-
         while(date <= end){
             list.push(new Date(date).getTime());
             date.setDate(date.getDate()+1);
         }
         return list;
     }
-
     const allDates = getDatesInRange(dates[0].startDate, dates[0].endDate);
-
     const isAvailable = (roomNumber) => {
         const isFound = roomNumber.unavailableDates.some(date => allDates.includes(new Date(date).getTime()));
         return !isFound;
     }
-
     const handleSelect = (e)=>{
         const checked = e.target.checked;
         const value = e.target.value;
         setSelectedRooms(checked ? [...selectedRooms, value] : selectedRooms.filter(item=> item !== value));
     }
-
     const handleClick = async ()=>{
         try{
             await Promise.all(selectedRooms.map(roomId=>{
@@ -49,11 +41,8 @@ export const Reserve = ({setOpen, hotelId}) => {
             setOpen(false);
             navigate("/");
         }catch(err){
-
         }
     }
-
-console.log(selectedRooms);
 
     return (
     <div className="reserve">
@@ -77,8 +66,7 @@ console.log(selectedRooms);
                         ))}
                     </div>
                 </div>
-            ))
-
+                ))
             }
             <button onClick={handleClick} className="rButton">Reserve Now!</button>
         </div>

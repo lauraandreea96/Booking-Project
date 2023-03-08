@@ -72,11 +72,6 @@ export const userColumns = [
       headerName: "Hotel ID",
       width: 230,
     },
-    // {
-    //   field: "desc",
-    //   headerName: "Description",
-    //   width: 270,
-    // },
     {
       field: "price",
       headerName: "Price",

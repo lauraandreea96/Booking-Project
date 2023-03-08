@@ -11,7 +11,6 @@ import { useContext } from "react";
 import { SearchContext } from "../../context/SearchContext";
 
 export const List = () => {
-
   const location =useLocation();
   const [destination, setDestination] = useState(location.state.destination);
   const [dates, setDates] = useState(location.state.dates);
@@ -20,18 +19,12 @@ export const List = () => {
   const [min, setMin] = useState(undefined);
   const [max, setMax] = useState(undefined);
   const [isActive, setActive ] = useState(false);
-
- 
-  console.log(destination);
   const{data, loading, error, reFetch} = useFetch(`/hotels?city=${destination}&min=${min || 0 }&max=${max || 999}`);
-  console.log(data);
   const {dispatch} = useContext(SearchContext);
-
   const handleClick =()=>{
     dispatch({type:"NEW_SEARCH", payload: {destination, dates, options}});
     setActive(!isActive);
   }
-
   const handleToggle = () => {
     setActive(!isActive);
   };

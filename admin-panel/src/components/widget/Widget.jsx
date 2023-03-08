@@ -8,19 +8,15 @@ import { Link } from "react-router-dom";
 
 const Widget = ({type}) => {
   let data;
-
   const { data: hotelsCount } = useFetch(
     "/hotels/count"
   );
-
   const { data: usersCount } = useFetch(
     "/users/count/AllUsers"
   );
-
   const { data: bookingsCount } = useFetch(
     "/rooms"
   );
-  
   let totalRooms= 0
   let roomsBooked = 0;
   bookingsCount.map(room => {
@@ -31,8 +27,6 @@ const Widget = ({type}) => {
       }
     }
   })
-
-
   switch(type){
     case "users":
       data= {
@@ -64,8 +58,7 @@ const Widget = ({type}) => {
       break;
       default:
         break;
-  }
-
+  };
 
   return (
     <div className="widget col-3-lg col-6-md col-12-xs">

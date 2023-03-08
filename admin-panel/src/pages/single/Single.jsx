@@ -8,11 +8,9 @@ const Single = (props) => {
   const type = location.pathname.split("/")[1];
   const object = location.pathname.split("/");
   const objectId =object[object.length - 1];
-
-  
-    const {data, loading} = useFetch(
-      type==="hotels" ? `/${type}/find/${objectId}` : `/${type}/${objectId}`
-    );
+  const {data, loading} = useFetch(
+    type==="hotels" ? `/${type}/find/${objectId}` : `/${type}/${objectId}`
+  );
  
   return (
     <div className="single">
@@ -24,9 +22,7 @@ const Single = (props) => {
               <div className="left col-3-md col-12-xs">{
                 loading ? <p>data id loading</p> : (
                   <img src={(type === "users") ? data.img : (type === "hotels") ? data.photos : "https://cdn-icons-png.flaticon.com/512/341/341144.png"} alt="" className="itemImg" />
-                )
-              }
-                
+                )}
                 <h1 className="itemTitle">{type === "users" ? data.username : data.title}</h1>
               </div>
               <div className="details col-9-md col-12-xs">

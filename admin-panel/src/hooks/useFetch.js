@@ -19,7 +19,6 @@ export const useFetch = (url)=>{
         };
         fetchData();
     },[url]);
-
     const reFetch = async ()=>{
         setLoading(true);
         try{

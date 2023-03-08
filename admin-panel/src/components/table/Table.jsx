@@ -12,14 +12,11 @@ const List = ({type}) => {
   let data;
   const {data : userData} = useFetch("/users");
   const {data : hotelData} = useFetch("/hotels");
-  console.log(data);
-
-if(type === "users"){
- data = userData;
-} else{
-  data = hotelData;
-}
-
+  if(type === "users"){
+    data = userData;
+  } else{
+    data = hotelData;
+  }
 
   return (
     <div className="table">

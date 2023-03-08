@@ -6,9 +6,7 @@ const INITIAL_STATE = {
     loading: false,
     error: null,
 };
-
 export const AuthContext = createContext(INITIAL_STATE);
-
     const AuthReducer = (state, action)=>{
     switch(action.type){
         case "LOGIN_START":
@@ -39,10 +37,8 @@ export const AuthContext = createContext(INITIAL_STATE);
             return state;
     }
 }
-
 export const AuthContextProvider = ({children}) =>{
     const [state, dispatch]  = useReducer(AuthReducer, INITIAL_STATE);
-
     useEffect(()=>{
         localStorage.setItem("user", JSON.stringify(state.user))
     },[state.user])

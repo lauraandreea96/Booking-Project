@@ -5,16 +5,11 @@ import { useState } from "react";
 import axios from "axios";
 
 const NewHotel = ({inputs, title, view}) => {
-
   const [files, setFiles] = useState("");
   const [info, setInfo] = useState({});
-
-
   const handleChange = e =>{
     setInfo(prev =>({...prev, [e.target.id]:e.target.value}));
-  }
-
-
+  };
   const handleClick = async e =>{
     e.preventDefault();
     try{
@@ -26,18 +21,15 @@ const NewHotel = ({inputs, title, view}) => {
         const {url} = uploadRes.data;
         return url;
       }));
-
       const newhotel = {
         ...info, 
-        // rooms,
         photos: list
       }
-
       await axios.post("/hotels", newhotel);
-    }catch{
-
+    }catch(err){
+      console.log(err);
     }
-  }
+  };
 
   return (
     <div className="new">
@@ -56,7 +48,6 @@ const NewHotel = ({inputs, title, view}) => {
                 <label htmlFor="file"> Image: <DriveFolderUploadOutlinedIcon className="icon"/></label>
                 <input type="file" id="file" multiple onChange={e=>setFiles(e.target.files)} style={{display: "none"}}/>
               </div>
-
               {inputs.map(input => (
                 <div className="formInput col-6-lg col-12-xs" key={input.id}>
                   <label>{input.label}</label>
@@ -75,7 +66,6 @@ const NewHotel = ({inputs, title, view}) => {
           </div>
         </div>
       </div>
-      
     </div>
   )
 }

@@ -5,14 +5,11 @@ import { useState } from "react";
 import axios from "axios";
 
 const New = ({inputs, title, view}) => {
-
   const [file, setFile] = useState("");
   const [info, setInfo] = useState({});
-
   const handleChange = e =>{
     setInfo(prev =>({...prev, [e.target.id]:e.target.value}));
   }
-
   const handleClick = async e =>{
     e.preventDefault();
     const data = new FormData();
@@ -21,20 +18,15 @@ const New = ({inputs, title, view}) => {
     try{
       const uploadRes = await axios.post("https://api.cloudinary.com/v1_1/dpp13bpyb/image/upload", data);
       const {url} = uploadRes.data;
-
       const newUser = {
         ...info,
         img: url,
       };
-
-
       await axios.post("/auth/register", newUser);
     }catch(err){
       console.log(err);
     }
   }
-
-  console.log(info);
 
   return (
     <div className="new">
@@ -53,20 +45,17 @@ const New = ({inputs, title, view}) => {
                 <label htmlFor="file"> Image: <DriveFolderUploadOutlinedIcon className="icon"/></label>
                 <input type="file" id="file" onChange={e=>setFile(e.target.files[0])} style={{display: "none"}}/>
               </div>
-
               {inputs.map(input => (
                 <div className="formInput col-6-lg col-12-xs" key={input.id}>
                   <label>{input.label}</label>
                   <input onChange={handleChange} type={input.type} placeholder={input.placeholder} id={input.id}/>
               </div>
               ))}
-
               <button className="col-6-lg col-12-xs" onClick={handleClick}>Send</button>
             </form>
           </div>
         </div>
       </div>
-      
     </div>
   )
 }

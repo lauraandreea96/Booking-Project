@@ -27,33 +27,26 @@ export const Hotel = () => {
   const {dates, options} = useContext(SearchContext);
   const [openDate, setOpenDate] = useState(false);
   const [newDates, setNewDates] = useState({});
-
   const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
   function dayDifference(date1, date2) {
     const timeDiff = Math.abs(date2.getTime() - date1.getTime());
     const diffDays = Math.ceil(timeDiff / MILLISECONDS_PER_DAY);
     return diffDays;
   }
-
   const days = dayDifference(dates[0].endDate, dates[0].startDate);
-
   const handleOpen = (i)=>{
     setSliderIndex(i);
     setOpen(true);
   }
-
   const handleMove = (direction)=> {
     let newSlideIndex;
-
     if(direction === "l"){
       newSlideIndex = slideIndex === 0 ? 5 : slideIndex-1;
     }else{
       newSlideIndex = slideIndex === 5 ? 0 : slideIndex+1;
     }
-
     setSliderIndex(newSlideIndex);
   }
-
   const handleClick = ()=>{
     if(user){
       setOpenModal(true);
@@ -61,7 +54,6 @@ export const Hotel = () => {
       navigate("/login");
     }
   };
-
   const handleSearch = ()=>{
     dispatch({type:"NEW_SEARCH", payload: {dates: newDates, options: {
       adult: 1,
@@ -107,7 +99,6 @@ export const Hotel = () => {
                 <p className="hotelDesc">
                   {data.desc}
                 </p>
-
                 <div className="hotelSearch">
                   <div className="hotelSearchItem">
                     <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />

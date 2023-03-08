@@ -9,9 +9,7 @@ const INITIAL_STATE = {
             room: undefined
         }, 
 };
-
 export const SearchContext = createContext(INITIAL_STATE);
-
     const SearchReducer = (state, action)=>{
     switch(action.type){
         case "NEW_SEARCH":
@@ -22,10 +20,8 @@ export const SearchContext = createContext(INITIAL_STATE);
             return state;
     }
 }
-
 export const SearchContextProvider = ({children}) =>{
     const [state, dispatch]  = useReducer(SearchReducer, INITIAL_STATE);
-
     return(
         <SearchContext.Provider 
             value={{city: state.city, dates: state.dates, options: state.options, dispatch}}

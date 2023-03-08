@@ -11,15 +11,11 @@ export const Register = () => {
         username: undefined,
         password: undefined,
     })
-
     const {loading, error, dispatch} = useContext(AuthContext);
-
     const navigate = useNavigate();
-
     const handleChange = (e)=>{
         setCredential(prev =>({...prev, [e.target.id]: e.target.value}))
     }
-
     const handleClick = async (e)=>{
         e.preventDefault();
         dispatch({type:"REGISTER_START"});
@@ -31,7 +27,6 @@ export const Register = () => {
             dispatch({type:"REGISTER_FAILURE", payload: err.response.data});
         }
     };
-
 
   return (
     <div className="register">
